@@ -1,0 +1,39 @@
+/* THERE IS WORDPRESS STYLE IN HEAD WHICH I CANNOT REMOVE IT BREAKS THE NAV BY ADDING UNNECESARY MARGIN TOP */
+.wcm-nav-brand{
+    margin-left: 20px;
+}
+
+.wcm-navbar-button{
+    margin-right: 20px;
+}
+
+.wcm-nav > ul > li{
+    padding: 0px 10px 0px 10px;
+    flex-direction: row;
+}
+
+
+.wcm-nav > ul > li > a{
+    color: black;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+.wcm-nav > ul > li > a:hover{
+    text-decoration: underline;
+}
+
+/* Smaller screen css */
+
+@media (max-width: 700px){
+    .wcm-nav-brand{
+        margin-left: 0px;
+    }
+    
+    .wcm-navbar-button{
+        margin-right: 0px;
+    }
+    .wcm-nav > ul > li{
+        padding: 0px 5px 0px 5px;
+    }
+}

@@ -1,0 +1,19 @@
+.wcm-featured-cards{
+   text-align: center;
+   padding: 30px 0px 20px 0px;
+}
+
+.wcm-card-image{
+    width: 60%;
+    height: auto;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.wcm-featured-card-body{
+    border: none;
+}
+
+.wcm-featured-title{
+    margin: 20px 0px 20px 0px;
+}

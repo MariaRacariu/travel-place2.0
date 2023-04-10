@@ -1,0 +1,20 @@
+.wcm-hero-image{
+    width: 100%;
+    height: auto;
+}
+
+.wcm-hero-container{
+    position: relative;
+    text-align: center;
+}
+.wcm-hero-hover-text{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.wcm-hero-hover-text h2{
+    font-size: 50px;
+}
+
+/* Smaller screen css */
