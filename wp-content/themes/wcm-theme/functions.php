@@ -1,5 +1,5 @@
 <?php
- //Add theme support
+ //////////////////////////////////////////////////     Add theme support   //////////////////////////////////////////////////
 function setup_wcm_theme(){
     add_theme_support('post-thumbnails');
     add_theme_support('automatic-feed-links');
@@ -9,6 +9,8 @@ function setup_wcm_theme(){
 }
 // Hooking up the function to theme setup
 add_action('after_setup_theme', 'setup_wcm_theme');
+
+//////////////////////////////////////////////////    Create Custom Post Types   //////////////////////////////////////////////////
 
 function create_custom_posttypes(){
     // Custom Post Types Options for wcm_travel
@@ -81,10 +83,31 @@ function create_custom_posttypes(){
             'show_in_rest' => true,
         )
     );
+
+    // Custom Post Types Options for wcm_special_posts
+    register_post_type( 'wcm_special_posts',
+        array(
+            'labels' => array(
+                'name' => __( 'Special Posts' ),
+                'singular_name' => __( 'Special Post' )
+            ),
+            'public' => true,
+            'has_archive' => true,
+            'show_in_rest' => true,
+            'supports' => array(
+                'title',
+                'editor',
+                'thumbnail',
+                'custom-fields'
+            )
+        )
+    );
 }
 
 // Hooking up the function to init
 add_action( 'init', 'create_custom_posttypes');
+
+//////////////////////////////////////////////////    Create Custom Taxonomies   //////////////////////////////////////////////////
 
 function register_custom_taxonomy(){
     //Taxonomi information for North America
@@ -165,10 +188,10 @@ function register_custom_taxonomy(){
         );
         register_taxonomy('travel_autralia_and_oceania', ['wcm_travel', 'wcm_cruise', 'wcm_hike', 'page'], $args);
 
-    //Taxonomi information for Featured posts for admin to choose which ones they want featured
-    // Will be applied to every post type
+    //Taxonomi information for Special Posts
+    //This will allow admins to add posts that already exist or create new for displaying in the hero sections or certain areas like recommended trips 
     $labels = array(
-        'name'              => _x('Featured','Featured'),
+        'name'              => _x('Special Posts', 'Special Posts'),
         );
         $args = array(
             'hierarchical'      => true,
@@ -177,13 +200,25 @@ function register_custom_taxonomy(){
             'show_admin_column' => true,
             'query_var'         => true,
         );
-        register_taxonomy('featured', ['wcm_travel', 'wcm_cruise', 'wcm-events', 'wcm_hike', 'wcm-tours', 'page'], $args);
-        
+        register_taxonomy('special_posts', ['wcm_travel', 'wcm_cruise', 'wcm_events', 'wcm_hike', 'wcm_tours', 'wcm_special_posts', 'page'], $args);
 
+    $labels = array(
+        'name'              => _x('News Posts', 'News Posts'),
+        );
+        $args = array(
+            'hierarchical'      => true,
+            'labels'            => $labels,
+            'show_ui'           => true,
+            'show_admin_column' => true,
+            'query_var'         => true,
+        );
+        register_taxonomy('news_posts', ['wcm_travel', 'wcm_cruise', 'wcm_events', 'wcm_hike', 'wcm_tours', 'page'], $args);
 }
 
 // Hooking up the function to init
 add_action( 'init', 'register_custom_taxonomy');
+
+//////////////////////////////////////////////////    Menus   //////////////////////////////////////////////////
 
 //Navigation Menu
 function register_my_menus() {
@@ -198,6 +233,8 @@ function register_my_menus() {
    }
 add_action( 'init', 'register_my_menus' );
 
+//////////////////////////////////////////////////    All Styles   //////////////////////////////////////////////////
+
 // Styles
 function register_styles(){
     wp_enqueue_style('navbar_style', get_theme_file_uri('assets/css/nav-style.css'), array('bootstrap_style'), '1.0', 'all');
@@ -206,9 +243,8 @@ function register_styles(){
     wp_enqueue_style('search_style', get_theme_file_uri('assets/css/search-style.css'), array('bootstrap_style'), '1.0', 'all');
     wp_enqueue_style('cards_style', get_theme_file_uri('assets/css/cards-style.css'), array('bootstrap_style'), '1.0', 'all');
     wp_enqueue_style('news_letter_style', get_theme_file_uri('assets/css/news-letter-style.css'), array('bootstrap_style'), '1.0', 'all');
-    wp_enqueue_style('bootstrap_style', "https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css", array());
-
+    wp_enqueue_style('bootstrap_style', "https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css", array(),);
 }
 
-add_action('init', 'register_styles');
+add_action('wp_enqueue_scripts', 'register_styles');
 ?>

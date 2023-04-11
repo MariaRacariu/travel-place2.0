@@ -11,7 +11,7 @@
         'tax_query' => array(
             // Tell it to use only customer informatiohn posts from the taxonomy cutomer-information
             array(
-                'taxonomy' => 'featured',
+                'taxonomy' => 'special_posts',
                 'field'    => 'slug',
                 'terms'    => 'customer-information',
             ), 
@@ -27,7 +27,7 @@
             <div class="col-3 text-center">
                 <h3><?php the_title(); ?></h3>
                 <p><?php the_excerpt(); ?></p>
-                <a href=<?php the_permalink(); ?> ><button type="button" class="btn btn-primary">Läs mer</button></a>
+                <a href=<?php the_permalink(); ?> ><button type="button" class="btn btn-primary">Read more...</button></a>
             </div>
             <?php
         }

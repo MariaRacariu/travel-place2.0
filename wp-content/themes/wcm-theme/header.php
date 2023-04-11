@@ -1,7 +1,7 @@
 <?php wp_head(); ?>
 <nav class="navbar navbar-expand-lg navbar-expand-sm">
     <div class="container-fluid">
-        <a class="navbar-brand wcm-nav-brand" href="/travel-place">Travel Place</a>
+        <a class="navbar-brand wcm-nav-brand" href="/travel-place2.0">Travel Place</a>
 <?php 
 
 wp_nav_menu( array( 

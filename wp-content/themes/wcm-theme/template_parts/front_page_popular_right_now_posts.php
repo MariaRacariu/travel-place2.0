@@ -1,10 +1,10 @@
-<div class="row">
+<div class="row py-5">
     <div class="col-3 offset-2">
-        <h2 class="wcm-featured-title d-flex justify-content-start">Popular right now</h2>
+        <h2 class="d-flex justify-content-start">Popular right now</h2>
     </div>
 </div>
 
-<div class="card-group wcm-featured-cards">
+<div class="card-group">
     <div class="row justify-content-center">
         <?php
 
@@ -15,7 +15,7 @@
             'tax_query' => array(
                 // Tell it to use only popular posts from the taxonomy popular
                 array(
-                    'taxonomy' => 'featured',
+                    'taxonomy' => 'special_posts',
                     'field'    => 'slug',
                     'terms'    => 'popular-right-now',
                 ), 
@@ -29,15 +29,15 @@
                 $popular_query->the_post();
                 ?>
                 <div class="col-3">
-                    <div class="card wcm-featured-card-body">
+                    <div class="card">
                         <?php
                     // if posts has thumbnail
                     if ( has_post_thumbnail() ) {
                         // show thumbnail
-                        the_post_thumbnail('thumbnail', array( 'class' => 'card-img-top wcm-card-image' ));
+                        the_post_thumbnail('medium', array( 'class' => 'card-img-top' ));
                     }
                 ?>
-                        <div class="card-body">
+                        <div class="card-body text-center">
                             <h3 class="card-title"><?php the_title(); ?></h3>
                             <p class="card-text"><?php the_excerpt(); ?></p>
                             <a href=<?php the_permalink(); ?> ><button type="button" class="btn btn-primary">Läs mer</button></a>
