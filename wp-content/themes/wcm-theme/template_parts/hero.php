@@ -27,6 +27,7 @@
                 // if yes then output thumbnail with class img-fluid
                 the_post_thumbnail('full', array( 'class' => 'wcm-hero-image' ));
             }
+            
             ?>
             <div class="wcm-hero-hover-text">
                 <!-- Show title -->
