@@ -42,7 +42,12 @@ function create_custom_posttypes(){
             'public' => true,
             'has_archive' => true,
             'show_in_rest' => true,
-        )
+            'supports' => array(
+                'title',
+                'editor',
+                'thumbnail',
+                'custom-fields'
+            ))
     );
 
     // Custom Post Types Options for wcm_events
@@ -55,7 +60,12 @@ function create_custom_posttypes(){
             'public' => true,
             'has_archive' => true,
             'show_in_rest' => true,
-        )
+            'supports' => array(
+                'title',
+                'editor',
+                'thumbnail',
+                'custom-fields'
+            ))
     );
 
     // Custom Post Types Options for wcm_hike
@@ -68,7 +78,12 @@ function create_custom_posttypes(){
             'public' => true,
             'has_archive' => true,
             'show_in_rest' => true,
-        )
+            'supports' => array(
+                'title',
+                'editor',
+                'thumbnail',
+                'custom-fields'
+            ))
     );
 
     // Custom Post Types Options for wcm_tours
@@ -81,7 +96,12 @@ function create_custom_posttypes(){
             'public' => true,
             'has_archive' => true,
             'show_in_rest' => true,
-        )
+            'supports' => array(
+                'title',
+                'editor',
+                'thumbnail',
+                'custom-fields'
+            ))
     );
 
     // Custom Post Types Options for wcm_special_posts
@@ -120,6 +140,7 @@ function register_custom_taxonomy(){
         'show_ui'           => true,
         'show_admin_column' => true,
         'query_var'         => true,
+        'show_in_rest'      => true,
     );
     register_taxonomy('travel_north_america', ['wcm_travel', 'wcm_cruise', 'wcm_events', 'wcm_hike', 'page'], $args);
 
@@ -133,6 +154,7 @@ function register_custom_taxonomy(){
         'show_ui'           => true,
         'show_admin_column' => true,
         'query_var'         => true,
+        'show_in_rest'      => true,
     );
     register_taxonomy('travel_south_america', ['wcm_travel', 'wcm_tours', 'wcm_hike', 'page'], $args);
 
@@ -146,6 +168,7 @@ function register_custom_taxonomy(){
             'show_ui'           => true,
             'show_admin_column' => true,
             'query_var'         => true,
+            'show_in_rest'      => true,
         );
         register_taxonomy('travel_europe', ['wcm_travel', 'wcm_tours', 'wcm_cruise', 'wcm_events', 'page'], $args);
 
@@ -159,6 +182,7 @@ function register_custom_taxonomy(){
             'show_ui'           => true,
             'show_admin_column' => true,
             'query_var'         => true,
+            'show_in_rest'      => true,
         );
         register_taxonomy('travel_asia', ['wcm_travel', 'wcm_tours', 'wcm_hike', 'page'], $args);
 
@@ -172,6 +196,7 @@ function register_custom_taxonomy(){
             'show_ui'           => true,
             'show_admin_column' => true,
             'query_var'         => true,
+            'show_in_rest'      => true,
         );
         register_taxonomy('travel_africa', ['wcm_travel', 'wcm_tours', 'page'], $args);
 
@@ -185,6 +210,7 @@ function register_custom_taxonomy(){
             'show_ui'           => true,
             'show_admin_column' => true,
             'query_var'         => true,
+            'show_in_rest'      => true,
         );
         register_taxonomy('travel_autralia_and_oceania', ['wcm_travel', 'wcm_cruise', 'wcm_hike', 'page'], $args);
 
