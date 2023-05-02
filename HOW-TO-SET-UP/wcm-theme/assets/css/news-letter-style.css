@@ -1,0 +1,14 @@
+.wcm-news-letter{
+    padding: 40px 0px 40px 0px;
+    position: relative;
+    text-align: center;
+}
+.wcm-input-group{
+    padding: 10px 0px 10px 0px;
+    /* HOW TO CENTER */
+    display: flex;
+    justify-content: center;
+}
+.wcm-input-field{
+    max-width: 500px;
+}

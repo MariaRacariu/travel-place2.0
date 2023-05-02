@@ -1,0 +1,36 @@
+1. Install MAMP if you don't already have it.
+2. Go into C:\MAMP\htdocs and create a folder called travel-place
+3. Download Wordpress zip file, extract everything from it into the new folder you've just created.
+4. Create a copy of wp-config-sample.php in the same location and rename the new copy to wp-config.php
+5. Open wp-config.php in your editor. 
+6. Change database name to: travel-place and username and password to the ones you use.
+7. Got to localhost/phpmyadmin (or your own phpmyadmin if you have a different link)
+8. Create a new database called travel-place
+9. Now go to localhost/travel-place
+10. Now to set up Wordpress, Site name is Travel Place and the rest info is for yourself to input
+11. Now log into the Wordpress dashboard and navigate to Themes.
+12. You can either add the wcm-theme by clicking upload and uploading it that way or go into the directory of your project and
+moving the theme into C:\MAMP\htdocs\travel-place\wp-content\themes.
+13. After navigate back to Themes and activate the wcm-theme.
+14. Now to import the posts, navigate to Tools and click on Import. 
+15. Install Wordpress Importer and after it installs click Run Importer.
+16. Browse and find the exported file that is in the HOW-TO-SET-UP folder. (Name of file: travelplace.WordPress.2023-05-02.xml)
+17. Click Upload file and import. Select admin as user and click the check mark for Import Attachments
+18. If the Import is sucessful you will get a message saying All Done. There might be issues with importing images.
+IF IMAGES DON'T UPLOAD PLS USE IMAGES FROM FOLDER IN HOW-TO-SET-UP. They are all copyright free images.
+
+
+MENUS:
+The menues seam to not work properly. To fix and personalise them I have small tutorial. 
+1. Got to Appearance and click on Menus.
+2. Select the menu you want to edit. 
+3. If you want the taxonomies and post types, go to Screen Options in the top right cotner of the page and select the ones you want to appear. 
+
+How I have it set up:
+To add these go to the Menu then select the tab View All.
+
+Main Menu: Travels, Travel Cruises, Travel Events, Travel Hikes, Travel Tours
+Places Menu: Europe, Asia, North America, South America, Africa, Australia & Oceania
+Small Front Page Menu: Travel Cruises, Travel Events, Travel Tours
+
+Do not forget to select where you want yout menu to be displayed. In menu settings you can select where they should be displayed.
